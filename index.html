@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARVISUAL | REAL ESTATE MEDIA</title>
+    <style>
+        /* Estilos básicos para emular el look del video */
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #111; /* Fondo oscuro general */
+            color: #fff;
+            overflow-x: hidden; /* Evitar scroll horizontal */
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.5); /* Un poco de transparencia para el header */
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            /* Podrías usar una imagen aquí si la tienes en formato adecuado */
+            /* Ejemplo: background-image: url('arvisual_logo_blanco.png'); */
+            color: #E0C070; /* Color dorado similar al logo */
+        }
+
+        .menu-icon {
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero-section::before { /* Overlay oscuro para mejor contraste del texto */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .hero-section .content {
+            position: relative; /* Para que esté sobre el overlay */
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5em;
+            margin-bottom: 0.2em;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .hero-section p, .hero-section h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            max-width: 800px;
+        }
+        
+        .hero-section h1 span { /* Para destacar palabras como en el video */
+            color: #61dafb; /* Azul claro como el video, o puedes usar el dorado #E0C070 */
+        }
+
+
+        .text-section {
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .text-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+         .text-section h2 span {
+            color: #61dafb;
+        }
+
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #1a1a1a; /* Un poco más claro que el body */
+        }
+
+        .stat {
+            max-width: 30%;
+        }
+
+        .stat h3 {
+            font-size: 2.8em;
+            margin-bottom: 5px;
+            color: #E0C070; /* Dorado */
+        }
+
+        .stat p {
+            font-size: 1.1em;
+            color: #ccc;
+        }
+        
+        .partner-logo-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #fff; /* Fondo blanco para el logo de COMPASS en el video */
+        }
+        .partner-logo-section img {
+            max-width: 200px;
+            filter: grayscale(1) brightness(0.5); /* Si el logo no es para fondo oscuro */
+        }
+         .partner-logo-section p { /* Añadimos texto para ARVISUAL */
+            font-size: 2em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .image-full-width {
+            width: 100%;
+            height: 60vh; /* O ajusta según necesidad */
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .portfolio-link-section {
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .portfolio-link-section img {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        .portfolio-link-section a {
+            font-size: 1.5em;
+            color: #61dafb; /* O dorado #E0C070 */
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #61dafb; /* O dorado */
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .portfolio-link-section a:hover {
+            background-color: #61dafb; /* O dorado */
+            color: #111;
+        }
+
+
+        .testimonials-section {
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .testimonials-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        .testimonials-section h2 span {
+            color: #61dafb; /* O dorado */
+        }
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .testimonial-grid img {
+            width: 100%;
+            max-width: 300px; /* Ajusta según tus imágenes */
+            height: 400px; /* Ajusta según tus imágenes */
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .testimonial-card {
+            background-color: #1f1f1f;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 20px auto; /* Centrado si es solo uno */
+            text-align: left;
+        }
+        .testimonial-card p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            font-style: italic;
+            color: #ddd;
+        }
+        .testimonial-card .author {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #E0C070; /* Dorado */
+        }
+        .testimonial-card .author span {
+            display: block;
+            font-size: 0.9em;
+            font-weight: normal;
+            color: #aaa;
+        }
+
+        .final-cta-section {
+            height: 80vh;
+        }
+        .final-cta-section h2 {
+             font-size: 3em;
+        }
+         .final-cta-section a {
+            font-size: 1.3em;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-bottom: 2px solid #fff; /* Para el estilo "Experience 910 >" */
+            transition: color 0.3s, border-color 0.3s;
+         }
+         .final-cta-section a:hover {
+            color: #E0C070; /* Dorado al pasar el mouse */
+            border-color: #E0C070;
+         }
+
+
+        /* Media Queries para Responsividad (muy básico) */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5em;
+            }
+            .hero-section p, .hero-section h2 {
+                font-size: 1.2em;
+            }
+            .stats-section {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .stat {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            .stat h3 {
+                font-size: 2em;
+            }
+            .testimonial-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .testimonial-grid img {
+                max-width: 80%;
+                height: auto;
+            }
+            header {
+                padding: 15px 20px;
+            }
+            .logo {
+                font-size: 1.5em;
+            }
+            .menu-icon {
+                font-size: 1.8em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ARVISUAL</div>
+        <div class="menu-icon">☰</div>
+    </header>
+
+    <main>
+        <!-- Sección Hero 1 (YOUR LUXURY PARTNER) -->
+        <section class="hero-section" style="background-image: url('https://via.placeholder.com/1500x1000/222222/FFFFFF?text=Imagen+Lujosa+1');">
+            <div class="content">
+                <h1>TU SOCIO EN <span>BIENES RAÍCES</span> DE LUJO.</h1>
+                <p>ESTRATEGIA VISUAL Y PRODUCCIÓN CREATIVA DE PROPIEDADES</p>
+            </div>
+        </section>
+
+        <!-- Sección Texto (REFLECTING THE ASPIRATIONS...) -->
+        <section class="text-section" style="background-color: #000;">
+            <h2>REFLEJANDO LAS <span>ASPIRACIONES</span> DEL COMPRADOR MODERNO</h2>
+        </section>
+
+        <!-- Sección Estadísticas (18M+ Views, etc.) -->
+        <section class="stats-section">
+            <div class="stat">
+                <h3>⚡️ Impacto</h3>
+                <p>Estrategia Visual que Cautiva y Convierte</p>
+            </div>
+            <div class="stat">
+                <h3>🔥 Resultados</h3>
+                <p>Contenido que Vende y Posiciona tu Marca</p>
+            </div>
+            <div class="stat">
+                <h3>📍 Valencia</h3>
+                <p>Servicio Exclusivo en Venezuela con Visión Global</p>
+            </div>
+        </section>
+        
+        <!-- Sección Partner Logo (COMPASS en el video) - Adaptado -->
+        <section class="partner-logo-section">
+            <!-- En lugar de un logo específico, un mensaje -->
+            <p>CONFIANZA Y CALIDAD EN CADA PROYECTO</p>
+        </section>
+
+        <!-- Sección Hero 2 (GROW YOUR BUSINESS...) -->
+        <section class="hero-section" style="background-image: url('https://via.placeholder.com/1500x1000/333333/FFFFFF?text=Imagen+Inmersiva+Piscina');">
+            <div class="content">
+                <h2>IMPULSA TU NEGOCIO CON NUESTRA <span>FOTOGRAFÍA Y VIDEOGRAFÍA</span> INMOBILIARIA.</h2>
+                <p>UNA FORMA INMERSIVA DE EXPERIMENTAR BIENES RAÍCES.</p>
+            </div>
+        </section>
+
+        <!-- Sección Texto (THIS IS THE PINNACLE...) -->
+        <section class="text-section" style="background-color: #111;">
+            <h2>ESTO ES LA <span>CIMA</span> DEL MEDIA INMOBILIARIO.</h2>
+        </section>
+
+        <!-- Sección Link Portafolio -->
+        <section class="portfolio-link-section" style="background-color: #0a0a0a;">
+             <img src="https://via.placeholder.com/800x500/282828/FFFFFF?text=Interior+Elegante" alt="Interior de propiedad de lujo">
+            <a href="#portfolio">Nuestro Portafolio &rarr;</a>
+        </section>
+
+        <!-- Sección Texto (THE GENESIS...) -->
+        <section class="text-section" style="background-color: #000;">
+            <h2>LA <span>GÉNESIS</span> DE LO QUE NOS HACE MEJORES</h2>
+        </section>
+
+        <!-- Imagen Full Width (Hombre caminando por piscina) -->
+        <div class="image-full-width" style="background-image: url('https://via.placeholder.com/1500x800/1a1a1a/FFFFFF?text=Estilo+de+Vida+Lujoso');"></div>
+        
+        <!-- Imagen Full Width (Mansión de noche) -->
+        <div class="image-full-width" style="background-image: url('https://via.placeholder.com/1500x800/101010/FFFFFF?text=Propiedad+Nocturna+Impresionante');"></div>
+
+        <!-- Sección Testimonios (WHAT OUR DISCERNING CLIENTS...) -->
+        <section class="testimonials-section" style="background-color: #050505;">
+            <h2>LO QUE NUESTROS CLIENTES <span>EXCLUSIVOS</span> DICEN...</h2>
+            <div class="testimonial-grid">
+                <img src="https://via.placeholder.com/300x400/444444/FFFFFF?text=Cliente+Satisfecho+1" alt="Cliente Satisfecho 1">
+                <img src="https://via.placeholder.com/300x400/555555/FFFFFF?text=Cliente+Satisfecho+2" alt="Cliente Satisfecho 2">
+                <img src="https://via.placeholder.com/300x400/383838/FFFFFF?text=Cliente+Satisfecho+3" alt="Cliente Satisfecho 3">
+            </div>
+            <div class="testimonial-card">
+                <p>"El trabajo de ARVISUAL transformó completamente la percepción de nuestras propiedades. Su enfoque en la estrategia visual y la calidad de producción es incomparable. Cada imagen y video cuenta una historia que vende."</p>
+                <div class="author">
+                    Alejandra Rivas
+                    <span>Promotora Inmobiliaria, Caracas</span>
+                </div>
+            </div>
+             <div class="testimonial-card">
+                <p>"Desde que colaboramos con ARVISUAL, nuestro contenido no solo atrae más miradas, sino que posiciona nuestra marca como líder en el sector de lujo. ¡Altamente recomendados!"</p>
+                <div class="author">
+                    Carlos Betancourt
+                    <span>Agente Inmobiliario, Valencia</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Imagen Full Width (Piscina con fuentes) -->
+        <div class="image-full-width" style="background-image: url('https://via.placeholder.com/1500x800/1f1f1f/FFFFFF?text=Piscina+Lujosa+Detalle');"></div>
+
+        <!-- Sección Texto (THE 10 LAWS OF BRANDING) -->
+        <section class="text-section" style="background-color: #000;">
+            <h2>LOS PRINCIPIOS DE UN <span>BRANDING</span> PODEROSO</h2>
+        </section>
+        
+        <!-- Sección Texto (INTO A FORCE TO BE RECKONED WITH) -->
+        <section class="text-section" style="background-color: #111;">
+            <h2>CONVIRTIENDO PROPIEDADES EN <span>ICONOS</span> DESEADOS.</h2>
+        </section>
+
+        <!-- Imagen Full Width (Arco con estatua) -->
+        <div class="image-full-width" style="background-image: url('https://via.placeholder.com/1500x800/181818/FFFFFF?text=Detalle+Arquitectónico');"></div>
+        
+        <!-- Sección Final CTA (DISCOVER OUR EXCELLENCE) -->
+        <section class="hero-section final-cta-section" style="background-image: url('https://via.placeholder.com/1500x1000/2c2c2c/FFFFFF?text=Atardecer+Exclusivo');">
+            <div class="content">
+                <h2>DESCUBRE NUESTRA <span>EXCELENCIA</span></h2>
+                <a href="#contact">EXPERIENCIA ARVISUAL &rarr;</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Podrías añadir un footer aquí si es necesario -->
+    <!-- 
+    <footer>
+        <p>&copy; 2024 ARVISUAL REAL ESTATE MEDIA. Todos los derechos reservados.</p>
+    </footer> 
+    -->
+
+</body>
+</html>
