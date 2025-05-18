@@ -44,8 +44,6 @@
             color: var(--dorado);
         }
 
-        /* Se eliminó .menu-icon */
-
         .hero-section {
             height: 100vh;
             display: flex;
@@ -66,7 +64,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0,0,0,0.55); /* Overlay un poco más oscuro */
+            background-color: rgba(0,0,0,0.55);
         }
 
         .hero-section .content {
@@ -105,9 +103,8 @@
         
         .hero-section h1 span, .hero-section h2 span,
         .text-section h2.section-title span {
-            color: var(--dorado); /* Spans ahora en dorado */
+            color: var(--dorado);
         }
-
 
         .text-section {
             padding: 80px 40px;
@@ -116,8 +113,8 @@
         .text-section.darker-bg {
             background-color: var(--azul-marino-oscuro);
         }
-         .text-section.black-bg { /* Podríamos renombrar esto o ajustar a azul muy oscuro */
-            background-color: #030f1f; /* Un azul marino aún más profundo */
+         .text-section.black-bg {
+            background-color: #030f1f;
         }
 
         .text-section h2.section-title {
@@ -139,14 +136,12 @@
             justify-content: space-around;
             text-align: center;
             padding: 70px 20px;
-            background-color: rgba(0,0,0,0.2); /* Overlay sutil sobre el fondo base */
+            background-color: rgba(0,0,0,0.2);
         }
         .stat { max-width: 30%; }
         .stat h3 { font-size: 2.8em; margin-bottom: 5px; color: var(--dorado); }
         .stat p { font-size: 1.1em; color: var(--texto-secundario); }
         
-        /* Eliminada la sección partner-logo-section por ahora, para simplificar con la nueva paleta */
-
         .image-full-width {
             width: 100%;
             height: 60vh; 
@@ -155,17 +150,17 @@
         }
         
         .portfolio-link-section {
-            padding: 80px 20px; /* Reducido padding horizontal para móviles */
+            padding: 80px 20px;
             text-align: center;
             background-color: var(--azul-marino-oscuro);
         }
         .portfolio-link-section h2.section-title {
-            color: var(--texto-principal); /* Asegurar color */
+            color: var(--texto-principal);
             margin-bottom: 40px;
         }
         .portfolio-link-section img {
             width: 100%;
-            max-width: 800px; /* Reducido para que no sea tan ancho vs el botón */
+            max-width: 800px;
             margin-bottom: 40px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -179,7 +174,7 @@
             padding: 15px 35px;
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
-            display: inline-block; /* Importante para centrado y padding */
+            display: inline-block;
             border: 2px solid transparent;
         }
         .portfolio-link-section a:hover {
@@ -187,48 +182,46 @@
             transform: translateY(-2px);
         }
 
-        /* Servicios Section */
         .services-section {
              padding: 80px 20px;
              background-color: var(--azul-marino);
         }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste minmax */
-            gap: 30px; /* Reducido gap */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
         .service-item {
-            background-color: rgba(255,255,255,0.05); /* Azul marino muy sutilmente más claro o overlay blanco */
-            padding: 25px; /* Reducido padding */
+            background-color: rgba(255,255,255,0.05);
+            padding: 25px;
             border-radius: 10px;
             text-align: left;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            border: 1px solid rgba(224, 192, 112, 0.15); /* Borde dorado muy sutil */
+            border: 1px solid rgba(224, 192, 112, 0.15);
         }
         .service-item img {
             width: 100%;
-            height: 180px; /* Reducido height */
+            height: 180px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 20px;
         }
         .service-item h3 {
-            font-size: 1.6em; /* Reducido tamaño */
+            font-size: 1.6em;
             color: var(--dorado);
             margin-top: 0;
             margin-bottom: 10px;
         }
         .service-item p {
-            font-size: 0.95em; /* Reducido tamaño */
+            font-size: 0.95em;
             line-height: 1.6;
             color: var(--texto-secundario);
         }
 
-        /* Benefits Section */
         .benefits-section {
-            padding: 80px 20px; /* Ajustado padding horizontal */
+            padding: 80px 20px;
             background-color: var(--azul-marino-oscuro);
         }
         .benefits-section ul {
@@ -239,7 +232,7 @@
             text-align: left;
         }
         .benefits-section li {
-            font-size: 1.1em; /* Reducido */
+            font-size: 1.1em;
             color: var(--texto-secundario);
             margin-bottom: 15px;
             line-height: 1.6;
@@ -253,37 +246,37 @@
             line-height: 1;
         }
         .benefits-section img.benefits-image {
-            max-width: 500px; /* Reducido */
-            width: 90%; /* Hacerlo responsive */
-            display: block; /* Para centrar con margin auto */
-            margin: 40px auto 0 auto; /* Centrado y con margen superior */
+            max-width: 500px;
+            width: 90%;
+            display: block;
+            margin: 40px auto 0 auto;
             border-radius: 8px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
         .testimonials-section {
-            padding: 80px 20px; /* Ajustado padding horizontal */
-            background-color: #030f1f; /* Azul marino muy oscuro */
+            padding: 80px 20px;
+            background-color: #030f1f;
         }
         .testimonial-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px; /* Reducido gap */
+            gap: 20px;
             margin-bottom: 40px;
         }
         .testimonial-grid img {
             width: 100%;
-            max-width: 250px; /* Reducido */
-            height: 350px; /* Reducido */
+            max-width: 250px;
+            height: 350px;
             object-fit: cover;
             border-radius: 8px;
         }
         .testimonial-card {
-            background-color: rgba(255,255,255,0.03); /* Casi transparente, depende del azul de fondo */
+            background-color: rgba(255,255,255,0.03);
             padding: 30px;
             border-radius: 8px;
-            max-width: 550px; /* Reducido */
+            max-width: 550px;
             margin: 20px auto;
             text-align: left;
             border: 1px solid rgba(224, 192, 112, 0.1);
@@ -316,7 +309,7 @@
         @media (max-width: 768px) {
             header {
                 padding: 15px 20px;
-                justify-content: center; /* Centrar logo si es el único elemento */
+                justify-content: center;
             }
             .logo { font-size: 1.6em; }
 
@@ -333,14 +326,14 @@
             .stat { max-width: 90%; margin: 0 auto; }
             .stat h3 { font-size: 2.2em; }
 
-            .portfolio-link-section { padding: 60px 15px; } /* Más reducción en padding */
+            .portfolio-link-section { padding: 60px 15px; }
             .portfolio-link-section img { max-width: 90%; }
             .portfolio-link-section a {
                 font-size: 1.2em;
                 padding: 12px 25px;
-                width: auto; /* Asegurar que no se extienda innecesariamente */
-                max-width: 90%; /* Que no sea más ancho que la pantalla menos márgenes */
-                box-sizing: border-box; /* Incluir padding y borde en el width */
+                width: auto;
+                max-width: 90%;
+                box-sizing: border-box;
             }
             
             .services-section { padding: 60px 15px; }
@@ -362,11 +355,11 @@
             .final-cta-section .content p { font-size: 1.1em; }
             .final-cta-section .content a { font-size: 1.1em; padding: 15px 30px; }
         }
-         @media (max-width: 480px) { /* Ajustes más finos para móviles pequeños */
+         @media (max-width: 480px) {
             .hero-section h1.brand-name { font-size: 2.4em; }
             .hero-section h1 { font-size: 1.8em; }
             .text-section h2.section-title { font-size: 1.6em; }
-            .portfolio-link-section a { width: 80%; text-align: center; } /* Hacerlo ocupar más ancho y centrar texto */
+            .portfolio-link-section a { width: 80%; text-align: center; }
          }
 
     </style>
@@ -375,7 +368,6 @@
 
     <header>
         <div class="logo">ARVISUAL</div>
-        <!-- Menú hamburguesa eliminado -->
     </header>
 
     <main>
@@ -412,7 +404,7 @@
         </section>
 
         <!-- Sección Servicios -->
-        <section class="services-section text-section"> <!-- Fondo azul marino por defecto -->
+        <section class="services-section text-section">
             <h2 class="section-title">NUESTROS <span>SERVICIOS</span></h2>
             <div class="services-grid">
                 <div class="service-item">
@@ -456,10 +448,10 @@
         <section class="portfolio-link-section">
              <h2 class="section-title">EXPLORA NUESTRO <span>TRABAJO</span></h2>
              <img src="https://via.placeholder.com/900x600/06172e/E0C070?text=Portafolio+ARVISUAL" alt="Portafolio Arvisual">
-            <a href="#portfolio">Ver Portafolio Completo →</a>
+            <a href="#portfolio">Ver Portafolio Completo →</a> <!-- Este enlace interno no se ve afectado -->
         </section>
 
-        <section class="testimonials-section text-section"> <!-- Fondo azul marino muy oscuro por defecto -->
+        <section class="testimonials-section text-section">
             <h2 class="section-title">CLIENTES <span>SATISFECHOS</span></h2>
             <div class="testimonial-grid">
                 <img src="https://via.placeholder.com/300x400/0A2240/E0C070?text=Cliente+1" alt="Cliente Satisfecho 1">
@@ -486,7 +478,7 @@
             <div class="content">
                 <h2>¿Listo para destacar tu próxima propiedad?</h2>
                 <p>Escríbenos y creamos el video perfecto para ti.</p>
-                <a href="https://wa.me/584121319111" target="_blank">CONTÁCTANOS POR WHATSAPP →</a>
+                <a href="https://wa.me/584121319111?text=Hola%20ARVISUAL%2C%20estoy%20interesado%2Fa%20en%20sus%20servicios%20de%20Real%20Estate%20Media." target="_blank">CONTÁCTANOS POR WHATSAPP →</a>
             </div>
         </section>
 
