@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARVISUAL | REAL ESTATE MEDIA</title>
     <style>
-        /* Estilos básicos para emular el look del video */
+        :root {
+            --azul-marino: #0A2240; /* Azul Marino Principal */
+            --azul-marino-oscuro: #06172e; /* Para fondos de sección ligeramente más oscuros */
+            --dorado: #E0C070;
+            --dorado-hover: #cfa75c;
+            --texto-principal: #F0F0F0;
+            --texto-secundario: #cccccc;
+            --azul-acento-video: #61dafb; /* Mantenemos este por si se decide usar en spans */
+        }
+
         body {
             margin: 0;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: #111; /* Fondo oscuro general */
-            color: #fff;
-            overflow-x: hidden; /* Evitar scroll horizontal */
+            background-color: var(--azul-marino);
+            color: var(--texto-principal);
+            overflow-x: hidden;
         }
 
         header {
@@ -20,24 +29,22 @@
             left: 0;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start; /* Cambiado de space-between ya que no hay menú */
             align-items: center;
             padding: 20px 40px;
             box-sizing: border-box;
             z-index: 1000;
-            background-color: rgba(0, 0, 0, 0.7); /* Un poco de transparencia para el header */
+            background-color: rgba(10, 34, 64, 0.8); /* Azul marino con transparencia */
+            border-bottom: 1px solid rgba(224, 192, 112, 0.2); /* Borde dorado sutil */
         }
 
         .logo {
             font-size: 1.8em;
             font-weight: bold;
-            color: #E0C070; /* Color dorado similar al logo */
+            color: var(--dorado);
         }
 
-        .menu-icon {
-            font-size: 2em;
-            cursor: pointer;
-        }
+        /* Se eliminó .menu-icon */
 
         .hero-section {
             height: 100vh;
@@ -52,18 +59,18 @@
             background-position: center;
             position: relative;
         }
-        .hero-section::before { /* Overlay oscuro para mejor contraste del texto */
+        .hero-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.55); /* Overlay un poco más oscuro */
         }
 
         .hero-section .content {
-            position: relative; /* Para que esté sobre el overlay */
+            position: relative;
             z-index: 1;
             max-width: 900px;
         }
@@ -73,10 +80,11 @@
             margin-bottom: 0.2em;
             line-height: 1.2;
             text-transform: uppercase;
+            color: var(--texto-principal);
         }
-         .hero-section h1.brand-name { /* Estilo para el nombre de la marca */
+         .hero-section h1.brand-name {
             font-size: 4em;
-            color: #E0C070;
+            color: var(--dorado);
             margin-bottom: 0.1em;
          }
 
@@ -85,18 +93,19 @@
             font-weight: normal;
             margin-top: 0;
             margin-bottom: 0.5em;
-            color: #f0f0f0;
+            color: var(--texto-principal);
         }
         .hero-section p.tagline {
             font-size: 1.4em;
             margin-top: 0;
             max-width: 700px;
             line-height: 1.5;
-            color: #ccc;
+            color: var(--texto-secundario);
         }
         
-        .hero-section h1 span, .hero-section h2 span {
-            color: #61dafb; /* Azul claro como el video, o puedes usar el dorado #E0C070 */
+        .hero-section h1 span, .hero-section h2 span,
+        .text-section h2.section-title span {
+            color: var(--dorado); /* Spans ahora en dorado */
         }
 
 
@@ -105,49 +114,38 @@
             text-align: center;
         }
         .text-section.darker-bg {
-            background-color: #0a0a0a;
+            background-color: var(--azul-marino-oscuro);
         }
-         .text-section.black-bg {
-            background-color: #000;
+         .text-section.black-bg { /* Podríamos renombrar esto o ajustar a azul muy oscuro */
+            background-color: #030f1f; /* Un azul marino aún más profundo */
         }
 
         .text-section h2.section-title {
             font-size: 2.8em;
             margin-bottom: 30px;
             text-transform: uppercase;
-        }
-         .text-section h2.section-title span {
-            color: #61dafb; /* O dorado #E0C070 */
+            color: var(--texto-principal);
         }
         .text-section p.section-subtitle {
             font-size: 1.3em;
             max-width: 800px;
             margin: 0 auto 40px auto;
             line-height: 1.7;
-            color: #ddd;
+            color: var(--texto-secundario);
         }
 
         .stats-section {
             display: flex;
             justify-content: space-around;
             text-align: center;
-            padding: 60px 20px;
-            background-color: #1a1a1a;
+            padding: 70px 20px;
+            background-color: rgba(0,0,0,0.2); /* Overlay sutil sobre el fondo base */
         }
         .stat { max-width: 30%; }
-        .stat h3 { font-size: 2.8em; margin-bottom: 5px; color: #E0C070; }
-        .stat p { font-size: 1.1em; color: #ccc; }
+        .stat h3 { font-size: 2.8em; margin-bottom: 5px; color: var(--dorado); }
+        .stat p { font-size: 1.1em; color: var(--texto-secundario); }
         
-        .partner-logo-section {
-            padding: 80px 20px;
-            text-align: center;
-            background-color: #fff; 
-        }
-        .partner-logo-section p {
-            font-size: 2em;
-            color: #333;
-            font-weight: bold;
-        }
+        /* Eliminada la sección partner-logo-section por ahora, para simplificar con la nueva paleta */
 
         .image-full-width {
             width: 100%;
@@ -157,72 +155,81 @@
         }
         
         .portfolio-link-section {
-            padding: 80px 40px;
+            padding: 80px 20px; /* Reducido padding horizontal para móviles */
             text-align: center;
-            background-color: #000;
+            background-color: var(--azul-marino-oscuro);
+        }
+        .portfolio-link-section h2.section-title {
+            color: var(--texto-principal); /* Asegurar color */
+            margin-bottom: 40px;
         }
         .portfolio-link-section img {
             width: 100%;
-            max-width: 900px; /* Más ancho para portfolio */
+            max-width: 800px; /* Reducido para que no sea tan ancho vs el botón */
             margin-bottom: 40px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .portfolio-link-section a {
-            font-size: 1.5em;
-            color: #61dafb;
+            font-size: 1.4em;
+            color: var(--azul-marino);
+            background-color: var(--dorado);
             text-decoration: none;
             font-weight: bold;
-            border: 2px solid #61dafb; 
-            padding: 12px 25px;
+            padding: 15px 35px;
             border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block; /* Importante para centrado y padding */
+            border: 2px solid transparent;
         }
         .portfolio-link-section a:hover {
-            background-color: #61dafb; 
-            color: #111;
+            background-color: var(--dorado-hover);
+            transform: translateY(-2px);
         }
 
         /* Servicios Section */
         .services-section {
              padding: 80px 20px;
+             background-color: var(--azul-marino);
         }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste minmax */
+            gap: 30px; /* Reducido gap */
             max-width: 1200px;
             margin: 0 auto;
         }
         .service-item {
-            background-color: #1c1c1c;
-            padding: 30px;
+            background-color: rgba(255,255,255,0.05); /* Azul marino muy sutilmente más claro o overlay blanco */
+            padding: 25px; /* Reducido padding */
             border-radius: 10px;
             text-align: left;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(224, 192, 112, 0.15); /* Borde dorado muy sutil */
         }
         .service-item img {
             width: 100%;
-            height: 200px;
+            height: 180px; /* Reducido height */
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 20px;
         }
         .service-item h3 {
-            font-size: 1.8em;
-            color: #E0C070; /* Dorado */
+            font-size: 1.6em; /* Reducido tamaño */
+            color: var(--dorado);
             margin-top: 0;
             margin-bottom: 10px;
         }
         .service-item p {
-            font-size: 1em;
+            font-size: 0.95em; /* Reducido tamaño */
             line-height: 1.6;
-            color: #bbb;
+            color: var(--texto-secundario);
         }
 
         /* Benefits Section */
         .benefits-section {
-            padding: 80px 40px;
+            padding: 80px 20px; /* Ajustado padding horizontal */
+            background-color: var(--azul-marino-oscuro);
         }
         .benefits-section ul {
             list-style: none;
@@ -232,70 +239,135 @@
             text-align: left;
         }
         .benefits-section li {
-            font-size: 1.2em;
-            color: #ddd;
+            font-size: 1.1em; /* Reducido */
+            color: var(--texto-secundario);
             margin-bottom: 15px;
             line-height: 1.6;
             display: flex;
             align-items: flex-start;
         }
         .benefits-section li .custom-bullet {
-            color: #E0C070; /* Dorado */
-            font-size: 1.5em; /* Un poco más grande para el check */
+            color: var(--dorado);
+            font-size: 1.3em;
             margin-right: 15px;
-            line-height: 1; /* Alineación vertical del check */
+            line-height: 1;
         }
-        .benefits-section img.benefits-image { /* Imagen para la sección de beneficios */
-            max-width: 600px;
-            width: 100%;
+        .benefits-section img.benefits-image {
+            max-width: 500px; /* Reducido */
+            width: 90%; /* Hacerlo responsive */
+            display: block; /* Para centrar con margin auto */
+            margin: 40px auto 0 auto; /* Centrado y con margen superior */
             border-radius: 8px;
-            margin-top: 50px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
-
         .testimonials-section {
-            padding: 80px 40px;
+            padding: 80px 20px; /* Ajustado padding horizontal */
+            background-color: #030f1f; /* Azul marino muy oscuro */
         }
-        /* ... (otros estilos de testimonios se mantienen) ... */
-        .testimonial-card p { font-size: 1.1em; line-height: 1.7; font-style: italic; color: #ddd; }
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Reducido gap */
+            margin-bottom: 40px;
+        }
+        .testimonial-grid img {
+            width: 100%;
+            max-width: 250px; /* Reducido */
+            height: 350px; /* Reducido */
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .testimonial-card {
+            background-color: rgba(255,255,255,0.03); /* Casi transparente, depende del azul de fondo */
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 550px; /* Reducido */
+            margin: 20px auto;
+            text-align: left;
+            border: 1px solid rgba(224, 192, 112, 0.1);
+        }
+        .testimonial-card p { font-size: 1.05em; line-height: 1.7; font-style: italic; color: var(--texto-secundario); }
+        .testimonial-card .author { margin-top: 20px; font-weight: bold; font-size: 1.1em; color: var(--dorado); }
+        .testimonial-card .author span { display: block; font-size: 0.9em; font-weight: normal; color: #aaa; }
+
 
         .final-cta-section { height: 80vh; }
-        .final-cta-section .content h2 { font-size: 2.5em; margin-bottom: 15px; }
-        .final-cta-section .content p { font-size: 1.3em; color: #ccc; max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;}
+        .final-cta-section .content h2 { font-size: 2.5em; margin-bottom: 15px; color: var(--texto-principal); }
+        .final-cta-section .content p { font-size: 1.3em; color: var(--texto-secundario); max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;}
         .final-cta-section .content a {
             font-size: 1.3em;
-            color: #fff;
+            color: var(--azul-marino);
+            background-color: var(--dorado);
             text-decoration: none;
             font-weight: bold;
-            background-color: #E0C070; /* Botón dorado */
-            color: #111;
-            padding: 15px 35px;
+            padding: 18px 40px;
             border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
          }
          .final-cta-section .content a:hover {
-            background-color: #d4b35e; /* Dorado más oscuro al pasar el mouse */
+            background-color: var(--dorado-hover);
             transform: translateY(-3px);
          }
 
-        /* Media Queries (muy básico) */
+        /* Media Queries */
         @media (max-width: 768px) {
-            .hero-section h1 { font-size: 2.2em; }
-            .hero-section h1.brand-name { font-size: 3em; }
-            .hero-section h2 { font-size: 1.4em; }
-            .hero-section p.tagline { font-size: 1.1em; }
-            .text-section h2.section-title { font-size: 2em; }
-            .text-section p.section-subtitle { font-size: 1.1em; }
-            .stats-section { flex-direction: column; gap: 30px; }
-            .stat { max-width: 80%; margin: 0 auto; }
-            .services-grid { grid-template-columns: 1fr; }
-            header { padding: 15px 20px; }
-            .logo { font-size: 1.5em; }
-            .menu-icon { font-size: 1.8em; }
+            header {
+                padding: 15px 20px;
+                justify-content: center; /* Centrar logo si es el único elemento */
+            }
+            .logo { font-size: 1.6em; }
+
+            .hero-section h1 { font-size: 2em; }
+            .hero-section h1.brand-name { font-size: 2.8em; }
+            .hero-section h2 { font-size: 1.3em; }
+            .hero-section p.tagline { font-size: 1em; }
+
+            .text-section { padding: 60px 20px; }
+            .text-section h2.section-title { font-size: 1.8em; }
+            .text-section p.section-subtitle { font-size: 1em; }
+
+            .stats-section { flex-direction: column; gap: 30px; padding: 50px 20px; }
+            .stat { max-width: 90%; margin: 0 auto; }
+            .stat h3 { font-size: 2.2em; }
+
+            .portfolio-link-section { padding: 60px 15px; } /* Más reducción en padding */
+            .portfolio-link-section img { max-width: 90%; }
+            .portfolio-link-section a {
+                font-size: 1.2em;
+                padding: 12px 25px;
+                width: auto; /* Asegurar que no se extienda innecesariamente */
+                max-width: 90%; /* Que no sea más ancho que la pantalla menos márgenes */
+                box-sizing: border-box; /* Incluir padding y borde en el width */
+            }
+            
+            .services-section { padding: 60px 15px; }
+            .services-grid { grid-template-columns: 1fr; gap: 20px; }
+            .service-item { padding: 20px; }
+            .service-item h3 { font-size: 1.4em; }
+            .service-item p { font-size: 0.9em; }
+
+            .benefits-section { padding: 60px 15px; }
+            .benefits-section ul { margin-top: 20px; }
+            .benefits-section li { font-size: 1em; }
+            .benefits-section img.benefits-image { margin-top: 30px; }
+
+            .testimonials-section { padding: 60px 15px; }
+            .testimonial-grid img { max-width: 200px; height: 300px; }
+            .testimonial-card { padding: 20px; }
+
             .final-cta-section .content h2 { font-size: 2em; }
             .final-cta-section .content p { font-size: 1.1em; }
+            .final-cta-section .content a { font-size: 1.1em; padding: 15px 30px; }
         }
+         @media (max-width: 480px) { /* Ajustes más finos para móviles pequeños */
+            .hero-section h1.brand-name { font-size: 2.4em; }
+            .hero-section h1 { font-size: 1.8em; }
+            .text-section h2.section-title { font-size: 1.6em; }
+            .portfolio-link-section a { width: 80%; text-align: center; } /* Hacerlo ocupar más ancho y centrar texto */
+         }
 
     </style>
 </head>
@@ -303,12 +375,12 @@
 
     <header>
         <div class="logo">ARVISUAL</div>
-        <div class="menu-icon">☰</div>
+        <!-- Menú hamburguesa eliminado -->
     </header>
 
     <main>
         <!-- Sección Hero Principal -->
-        <section class="hero-section" style="background-image: url('https://via.placeholder.com/1920x1080/222222/FFFFFF?text=Fachada+Lujosa+al+Atardecer');">
+        <section class="hero-section" style="background-image: url('https://via.placeholder.com/1920x1080/0A2240/E0C070?text=Fachada+Lujosa+Atardecer+ARVISUAL');">
             <div class="content">
                 <h1 class="brand-name">ARVISUAL</h1>
                 <h2>REAL ESTATE MEDIA</h2>
@@ -321,11 +393,9 @@
             <h2 class="section-title">NUESTRA <span>ESENCIA</span></h2>
             <p class="section-subtitle">Somos un equipo apasionado por transformar la manera en que se presentan las propiedades. Creamos contenido visual combinando la estética y autenticidad para que cada proyecto destaque en un mercado saturado de lo mismo.</p>
             <p class="section-subtitle" style="margin-top:20px;">Nuestra misión es simple: ayudarte a conectar con el comprador ideal a través de videos que emocionan, comunican el verdadero valor de cada propiedad y rompen con lo convencional.</p>
-             <!-- Podrías añadir una imagen sutil aquí de fondo o un pequeño gráfico visual temático -->
-             <!-- Ejemplo: <img src="https://via.placeholder.com/400x300/1a1a1a/FFFFFF?text=Concepto+Visual+Abstracto" alt="Concepto Arvisual" style="max-width:300px; margin-top:30px; border-radius:8px; opacity:0.7;"> -->
         </section>
 
-        <!-- Sección Estadísticas (Adaptadas previamente) -->
+        <!-- Sección Estadísticas -->
         <section class="stats-section">
             <div class="stat">
                 <h3>⚡️ Impacto</h3>
@@ -342,26 +412,26 @@
         </section>
 
         <!-- Sección Servicios -->
-        <section class="services-section text-section black-bg">
+        <section class="services-section text-section"> <!-- Fondo azul marino por defecto -->
             <h2 class="section-title">NUESTROS <span>SERVICIOS</span></h2>
             <div class="services-grid">
                 <div class="service-item">
-                    <img src="https://via.placeholder.com/400x250/333333/FFFFFF?text=FLASH+VIEW+(Reel+Dinámico)" alt="Flash View">
+                    <img src="https://via.placeholder.com/400x250/06172e/E0C070?text=FLASH+VIEW" alt="Flash View">
                     <h3>FLASH VIEW</h3>
                     <p>Video corto, dinámico y al grano. Ideal para Reels, TikToks o historias. Perfecto para captar atención en segundos y generar interés inmediato.</p>
                 </div>
                 <div class="service-item">
-                    <img src="https://via.placeholder.com/400x250/404040/FFFFFF?text=ON+CAMARA+(Agente+Presentando)" alt="On Camara">
+                    <img src="https://via.placeholder.com/400x250/06172e/E0C070?text=ON+CAMARA" alt="On Camara">
                     <h3>ON CAMARA</h3>
                     <p>Tú eres la cara. Presentas la propiedad con tu voz, tu estilo y tu energía. Ideal para reforzar tu marca personal y crear conexión directa con el cliente.</p>
                 </div>
                 <div class="service-item">
-                    <img src="https://via.placeholder.com/400x250/282828/FFFFFF?text=LIFESTYLE+VISION+(Escena+Aspiracional)" alt="Lifestyle Vision">
+                    <img src="https://via.placeholder.com/400x250/06172e/E0C070?text=LIFESTYLE+VISION" alt="Lifestyle Vision">
                     <h3>LIFESTYLE VISION</h3>
                     <p>Producción con estética. Mostramos la propiedad desde el deseo: emociones, estilo de vida, aspiración. Perfecto para destacar propiedades premium.</p>
                 </div>
                 <div class="service-item">
-                    <img src="https://via.placeholder.com/400x250/383838/FFFFFF?text=FULL+TOUR+(Recorrido+Detallado)" alt="Full Tour">
+                    <img src="https://via.placeholder.com/400x250/06172e/E0C070?text=FULL+TOUR" alt="Full Tour">
                     <h3>FULL TOUR</h3>
                     <p>Recorrido completo de la propiedad en alta calidad. Mostramos cada espacio con detalle y estética, brindando una visión clara y profesional.</p>
                 </div>
@@ -369,7 +439,7 @@
         </section>
 
         <!-- Sección Beneficios "¿Qué obtienes con nosotros?" -->
-        <section class="benefits-section text-section darker-bg">
+        <section class="benefits-section text-section">
             <h2 class="section-title">¿QUÉ OBTIENES CON <span>NOSOTROS?</span></h2>
             <ul>
                 <li><span class="custom-bullet">✓</span> Contenido que posiciona tu marca y tu imagen como profesional.</li>
@@ -378,26 +448,23 @@
                 <li><span class="custom-bullet">✓</span> Producción rápida, creativa y con intención.</li>
                 <li><span class="custom-bullet">✓</span> Un enfoque visual que vende sin sonar a venta.</li>
             </ul>
-            <img src="https://via.placeholder.com/600x400/1a1a1a/FFFFFF?text=Collage+de+Videos+Exitosos" alt="Beneficios Arvisual" class="benefits-image">
+            <img src="https://via.placeholder.com/600x400/06172e/E0C070?text=Resultados+ARVISUAL" alt="Beneficios Arvisual" class="benefits-image">
         </section>
         
-        <!-- Imagen Full Width (Piscina o detalle lujoso) -->
-        <div class="image-full-width" style="background-image: url('https://via.placeholder.com/1920x1080/1f1f1f/FFFFFF?text=Piscina+Moderna+con+Vistas');"></div>
+        <div class="image-full-width" style="background-image: url('https://via.placeholder.com/1920x1080/0A2240/E0C070?text=Detalle+Lujoso+Interior');"></div>
 
-        <!-- Sección Portafolio Link (Adaptado del video) -->
         <section class="portfolio-link-section">
-             <h2 class="section-title" style="color: #fff; margin-bottom: 50px;">EXPLORA NUESTRO <span>TRABAJO</span></h2>
-             <img src="https://via.placeholder.com/900x600/282828/FFFFFF?text=Mejores+Tomas+de+Portafolio" alt="Portafolio Arvisual">
+             <h2 class="section-title">EXPLORA NUESTRO <span>TRABAJO</span></h2>
+             <img src="https://via.placeholder.com/900x600/06172e/E0C070?text=Portafolio+ARVISUAL" alt="Portafolio Arvisual">
             <a href="#portfolio">Ver Portafolio Completo →</a>
         </section>
 
-        <!-- Sección Testimonios (Mantenida y adaptada) -->
-        <section class="testimonials-section text-section black-bg">
+        <section class="testimonials-section text-section"> <!-- Fondo azul marino muy oscuro por defecto -->
             <h2 class="section-title">CLIENTES <span>SATISFECHOS</span></h2>
             <div class="testimonial-grid">
-                <img src="https://via.placeholder.com/300x400/444444/FFFFFF?text=Cliente+Sonriente+1" alt="Cliente Satisfecho 1">
-                <img src="https://via.placeholder.com/300x400/555555/FFFFFF?text=Cliente+Profesional+2" alt="Cliente Satisfecho 2">
-                <img src="https://via.placeholder.com/300x400/383838/FFFFFF?text=Agente+Inmobiliario+Exitoso" alt="Cliente Satisfecho 3">
+                <img src="https://via.placeholder.com/300x400/0A2240/E0C070?text=Cliente+1" alt="Cliente Satisfecho 1">
+                <img src="https://via.placeholder.com/300x400/0A2240/E0C070?text=Cliente+2" alt="Cliente Satisfecho 2">
+                <img src="https://via.placeholder.com/300x400/0A2240/E0C070?text=Cliente+3" alt="Cliente Satisfecho 3">
             </div>
             <div class="testimonial-card">
                 <p>"El trabajo de ARVISUAL transformó completamente la percepción de nuestras propiedades. Su enfoque en la estrategia visual y la calidad de producción es incomparable."</p>
@@ -415,12 +482,11 @@
             </div>
         </section>
         
-        <!-- Sección Final CTA -->
-        <section class="hero-section final-cta-section" style="background-image: url('https://via.placeholder.com/1920x1080/2c2c2c/FFFFFF?text=Vista+Panorámica+Inspiradora');">
+        <section class="hero-section final-cta-section" style="background-image: url('https://via.placeholder.com/1920x1080/0A2240/E0C070?text=Contacta+ARVISUAL');">
             <div class="content">
                 <h2>¿Listo para destacar tu próxima propiedad?</h2>
                 <p>Escríbenos y creamos el video perfecto para ti.</p>
-                <a href="#contact">CONTÁCTANOS →</a>
+                <a href="https://wa.me/584121319111" target="_blank">CONTÁCTANOS POR WHATSAPP →</a>
             </div>
         </section>
 
