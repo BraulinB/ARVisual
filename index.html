@@ -6,13 +6,13 @@
     <title>ARVISUAL | REAL ESTATE MEDIA</title>
     <style>
         :root {
-            --azul-marino: #0A2240; /* Azul Marino Principal */
-            --azul-marino-oscuro: #06172e; /* Para fondos de sección ligeramente más oscuros */
+            --azul-marino: #081024; /* AZUL DEL LOGO */
+            --azul-marino-oscuro: #040812; /* Un poco más oscuro que el principal */
+            --azul-profundo: #02050a; /* Aún más oscuro, casi negro */
             --dorado: #E0C070;
             --dorado-hover: #cfa75c;
             --texto-principal: #F0F0F0;
             --texto-secundario: #cccccc;
-            --azul-acento-video: #61dafb; /* Mantenemos este por si se decide usar en spans */
         }
 
         body {
@@ -29,13 +29,13 @@
             left: 0;
             width: 100%;
             display: flex;
-            justify-content: flex-start; /* Cambiado de space-between ya que no hay menú */
+            justify-content: flex-start;
             align-items: center;
             padding: 20px 40px;
             box-sizing: border-box;
             z-index: 1000;
-            background-color: rgba(10, 34, 64, 0.8); /* Azul marino con transparencia */
-            border-bottom: 1px solid rgba(224, 192, 112, 0.2); /* Borde dorado sutil */
+            background-color: rgba(8, 16, 36, 0.85); /* Nuevo azul con opacidad */
+            border-bottom: 1px solid rgba(224, 192, 112, 0.2);
         }
 
         .logo {
@@ -64,7 +64,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0,0,0,0.55);
+            background-color: rgba(0,0,0,0.6); /* Overlay un poco más oscuro para contraste con el azul profundo */
         }
 
         .hero-section .content {
@@ -113,8 +113,8 @@
         .text-section.darker-bg {
             background-color: var(--azul-marino-oscuro);
         }
-         .text-section.black-bg {
-            background-color: #030f1f;
+         .text-section.deep-blue-bg { /* Anteriormente black-bg */
+            background-color: var(--azul-profundo);
         }
 
         .text-section h2.section-title {
@@ -136,7 +136,7 @@
             justify-content: space-around;
             text-align: center;
             padding: 70px 20px;
-            background-color: rgba(0,0,0,0.2);
+            background-color: rgba(0,0,0,0.25); /* Overlay sutil sobre el fondo base */
         }
         .stat { max-width: 30%; }
         .stat h3 { font-size: 2.8em; margin-bottom: 5px; color: var(--dorado); }
@@ -167,7 +167,7 @@
         }
         .portfolio-link-section a {
             font-size: 1.4em;
-            color: var(--azul-marino);
+            color: var(--azul-marino); /* Texto con el nuevo azul */
             background-color: var(--dorado);
             text-decoration: none;
             font-weight: bold;
@@ -184,7 +184,7 @@
 
         .services-section {
              padding: 80px 20px;
-             background-color: var(--azul-marino);
+             background-color: var(--azul-marino); /* Usará el nuevo azul */
         }
         .services-grid {
             display: grid;
@@ -194,7 +194,7 @@
             margin: 0 auto;
         }
         .service-item {
-            background-color: rgba(255,255,255,0.05);
+            background-color: rgba(255,255,255,0.05); /* Overlay blanco muy sutil sobre el azul */
             padding: 25px;
             border-radius: 10px;
             text-align: left;
@@ -222,7 +222,7 @@
 
         .benefits-section {
             padding: 80px 20px;
-            background-color: var(--azul-marino-oscuro);
+            background-color: var(--azul-marino-oscuro); /* Usará el nuevo azul oscuro */
         }
         .benefits-section ul {
             list-style: none;
@@ -256,7 +256,7 @@
 
         .testimonials-section {
             padding: 80px 20px;
-            background-color: #030f1f;
+            background-color: var(--azul-profundo); /* Usará el nuevo azul profundo */
         }
         .testimonial-grid {
             display: flex;
@@ -273,7 +273,7 @@
             border-radius: 8px;
         }
         .testimonial-card {
-            background-color: rgba(255,255,255,0.03);
+            background-color: rgba(255,255,255,0.03); /* Overlay blanco muy sutil */
             padding: 30px;
             border-radius: 8px;
             max-width: 550px;
@@ -291,7 +291,7 @@
         .final-cta-section .content p { font-size: 1.3em; color: var(--texto-secundario); max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;}
         .final-cta-section .content a {
             font-size: 1.3em;
-            color: var(--azul-marino);
+            color: var(--azul-marino); /* Texto con el nuevo azul */
             background-color: var(--dorado);
             text-decoration: none;
             font-weight: bold;
@@ -372,7 +372,7 @@
 
     <main>
         <!-- Sección Hero Principal -->
-        <section class="hero-section" style="background-image: url('https://via.placeholder.com/1920x1080/0A2240/E0C070?text=Fachada+Lujosa+Atardecer+ARVISUAL');">
+        <section class="hero-section" style="background-image: url('https://via.placeholder.com/1920x1080/081024/E0C070?text=Fachada+Lujosa+ARVISUAL');">
             <div class="content">
                 <h1 class="brand-name">ARVISUAL</h1>
                 <h2>REAL ESTATE MEDIA</h2>
@@ -408,22 +408,22 @@
             <h2 class="section-title">NUESTROS <span>SERVICIOS</span></h2>
             <div class="services-grid">
                 <div class="service-item">
-                    <img src="https://via.placeholder.com/400x250/06172e/E0C070?text=FLASH+VIEW" alt="Flash View">
+                    <img src="https://via.placeholder.com/400x250/040812/E0C070?text=FLASH+VIEW" alt="Flash View">
                     <h3>FLASH VIEW</h3>
                     <p>Video corto, dinámico y al grano. Ideal para Reels, TikToks o historias. Perfecto para captar atención en segundos y generar interés inmediato.</p>
                 </div>
                 <div class="service-item">
-                    <img src="https://via.placeholder.com/400x250/06172e/E0C070?text=ON+CAMARA" alt="On Camara">
+                    <img src="https://via.placeholder.com/400x250/040812/E0C070?text=ON+CAMARA" alt="On Camara">
                     <h3>ON CAMARA</h3>
                     <p>Tú eres la cara. Presentas la propiedad con tu voz, tu estilo y tu energía. Ideal para reforzar tu marca personal y crear conexión directa con el cliente.</p>
                 </div>
                 <div class="service-item">
-                    <img src="https://via.placeholder.com/400x250/06172e/E0C070?text=LIFESTYLE+VISION" alt="Lifestyle Vision">
+                    <img src="https://via.placeholder.com/400x250/040812/E0C070?text=LIFESTYLE+VISION" alt="Lifestyle Vision">
                     <h3>LIFESTYLE VISION</h3>
                     <p>Producción con estética. Mostramos la propiedad desde el deseo: emociones, estilo de vida, aspiración. Perfecto para destacar propiedades premium.</p>
                 </div>
                 <div class="service-item">
-                    <img src="https://via.placeholder.com/400x250/06172e/E0C070?text=FULL+TOUR" alt="Full Tour">
+                    <img src="https://via.placeholder.com/400x250/040812/E0C070?text=FULL+TOUR" alt="Full Tour">
                     <h3>FULL TOUR</h3>
                     <p>Recorrido completo de la propiedad en alta calidad. Mostramos cada espacio con detalle y estética, brindando una visión clara y profesional.</p>
                 </div>
@@ -440,23 +440,23 @@
                 <li><span class="custom-bullet">✓</span> Producción rápida, creativa y con intención.</li>
                 <li><span class="custom-bullet">✓</span> Un enfoque visual que vende sin sonar a venta.</li>
             </ul>
-            <img src="https://via.placeholder.com/600x400/06172e/E0C070?text=Resultados+ARVISUAL" alt="Beneficios Arvisual" class="benefits-image">
+            <img src="https://via.placeholder.com/600x400/040812/E0C070?text=Resultados+ARVISUAL" alt="Beneficios Arvisual" class="benefits-image">
         </section>
         
-        <div class="image-full-width" style="background-image: url('https://via.placeholder.com/1920x1080/0A2240/E0C070?text=Detalle+Lujoso+Interior');"></div>
+        <div class="image-full-width" style="background-image: url('https://via.placeholder.com/1920x1080/081024/E0C070?text=Detalle+Lujoso+Interior');"></div>
 
         <section class="portfolio-link-section">
              <h2 class="section-title">EXPLORA NUESTRO <span>TRABAJO</span></h2>
-             <img src="https://via.placeholder.com/900x600/06172e/E0C070?text=Portafolio+ARVISUAL" alt="Portafolio Arvisual">
-            <a href="#portfolio">Ver Portafolio Completo →</a> <!-- Este enlace interno no se ve afectado -->
+             <img src="https://via.placeholder.com/900x600/040812/E0C070?text=Portafolio+ARVISUAL" alt="Portafolio Arvisual">
+            <a href="#portfolio">Ver Portafolio Completo →</a>
         </section>
 
-        <section class="testimonials-section text-section">
+        <section class="testimonials-section text-section deep-blue-bg">
             <h2 class="section-title">CLIENTES <span>SATISFECHOS</span></h2>
             <div class="testimonial-grid">
-                <img src="https://via.placeholder.com/300x400/0A2240/E0C070?text=Cliente+1" alt="Cliente Satisfecho 1">
-                <img src="https://via.placeholder.com/300x400/0A2240/E0C070?text=Cliente+2" alt="Cliente Satisfecho 2">
-                <img src="https://via.placeholder.com/300x400/0A2240/E0C070?text=Cliente+3" alt="Cliente Satisfecho 3">
+                <img src="https://via.placeholder.com/300x400/081024/E0C070?text=Cliente+1" alt="Cliente Satisfecho 1">
+                <img src="https://via.placeholder.com/300x400/081024/E0C070?text=Cliente+2" alt="Cliente Satisfecho 2">
+                <img src="https://via.placeholder.com/300x400/081024/E0C070?text=Cliente+3" alt="Cliente Satisfecho 3">
             </div>
             <div class="testimonial-card">
                 <p>"El trabajo de ARVISUAL transformó completamente la percepción de nuestras propiedades. Su enfoque en la estrategia visual y la calidad de producción es incomparable."</p>
@@ -474,7 +474,7 @@
             </div>
         </section>
         
-        <section class="hero-section final-cta-section" style="background-image: url('https://via.placeholder.com/1920x1080/0A2240/E0C070?text=Contacta+ARVISUAL');">
+        <section class="hero-section final-cta-section" style="background-image: url('https://via.placeholder.com/1920x1080/081024/E0C070?text=Contacta+ARVISUAL');">
             <div class="content">
                 <h2>¿Listo para destacar tu próxima propiedad?</h2>
                 <p>Escríbenos y creamos el video perfecto para ti.</p>
