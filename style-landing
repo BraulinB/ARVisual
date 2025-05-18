@@ -1,0 +1,71 @@
+        :root {
+            --azul-marino: #081024; /* <<< NUEVO AZUL BASADO EN EL LOGO */
+            --azul-marino-oscuro: #040812; /* <<< Un poco más oscuro que el principal */
+            --dorado: #E0C070;
+            --dorado-hover: #cfa75c;
+            --texto-principal: #F0F0F0;
+            --texto-secundario: #cccccc;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--azul-marino); /* Actualizado */
+            color: var(--texto-principal);
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            z-index: 1000;
+            background-color: rgba(8, 16, 36, 0.85); /* Actualizado con el nuevo azul y transparencia */
+            border-bottom: 1px solid rgba(224, 192, 112, 0.2);
+        }
+
+        /* ... (resto del CSS donde se usa --azul-marino o --azul-marino-oscuro se actualizará automáticamente) ... */
+
+        .text-section.darker-bg {
+            background-color: var(--azul-marino-oscuro); /* Se ajustará basado en el nuevo azul marino */
+        }
+         .text-section.black-bg { /* Renombramos a azul-profundo o similar */
+            background-color: #02050a; /* Un azul aún más profundo que el --azul-marino-oscuro */
+        }
+
+        .portfolio-link-section {
+            /* ... */
+            background-color: var(--azul-marino-oscuro); /* Se ajustará */
+        }
+        .portfolio-link-section a {
+            /* ... */
+            color: var(--azul-marino); /* Texto del botón ahora usará el nuevo azul */
+            /* ... */
+        }
+
+        .services-section {
+             /* ... */
+             background-color: var(--azul-marino); /* Se ajustará */
+        }
+
+        .benefits-section {
+            /* ... */
+            background-color: var(--azul-marino-oscuro); /* Se ajustará */
+        }
+
+        .testimonials-section {
+            /* ... */
+            background-color: #02050a; /* Usando el azul más profundo */
+        }
+
+        .final-cta-section .content a {
+            /* ... */
+            color: var(--azul-marino); /* Texto del botón ahora usará el nuevo azul */
+            /* ... */
+         }
